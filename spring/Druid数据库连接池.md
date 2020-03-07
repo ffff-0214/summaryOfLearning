@@ -48,7 +48,7 @@
      # 主数据源，默认的
      spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
      spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-     spring.datasource.url=jdbc:mysql://localhost:3306/druid
+     spring.datasource.url=jdbc:mysql://localhost:3306/druid?serverTimezone=GMT%2B8&useSSL=false
      spring.datasource.username=root
      spring.datasource.password=root
      
@@ -120,7 +120,7 @@
          public SqlSessionTemplate getSqlSessionTemplate() throws Exception {
              return  new SqlSessionTemplate(this.getMysqlSessionFactory());
          }
-  }
+    }
      ```
 
      **注意：**

@@ -298,6 +298,7 @@ tag其实就是一个让人容易记住的有意义的名字，它跟某个commi
 - git stash drop 删除stash内容
 - git stash pop 恢复的同时把stash内容也删了
 - git remote 查看远程库的信息，会显示origin，远程仓库默认名称为origin
+- git remote  remove origin 删除远程仓库（默认名称为origin）指定其他名称就写其他名称
 - git remote -v 显示更详细的信息
 - git pull 把最新的提交从远程仓库中抓取下来，在本地合并,和git push相反
 - git rebase 把分叉的提交历史“整理”成一条直线，看上去更直观

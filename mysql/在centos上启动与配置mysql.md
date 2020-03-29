@@ -141,6 +141,12 @@ systemctl restart mysqld.service
   > ```shell
   > firewall-cmd --list-ports
   > ```
+  >
+  > 4. 如果显示防火墙没有开
+  >
+  > ```shell
+  > systemctl start firewalld
+  > ```
 
 ---
 

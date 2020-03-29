@@ -59,6 +59,14 @@
   [root@mysql home]# tar -xvf mysql-8.0.17-1.el7.x86_64.rpm-bundle.tar
   ```
 
+  如果服务器没有装zmodem传输，则需要装：
+
+  ```bash
+  # yum install lrzsz
+  ```
+
+  太慢！还是用ftp好
+
 + 开始安装
 
   > ```shell
@@ -73,6 +81,12 @@
   > [root@mysql home]# rpm -ivh mysql-community-embedded-compat-8.0.17-1.el7.x86_64.rpm（可选）
   > [root@mysql home]# rpm -ivh mysql-community-test-8.0.17-1.el7.x86_64.rpm（可选）
   > ```
+  >
+  > *红帽*安装rpm安装MySQL时爆出警告： 警告：MySQL-server-5.5.46-1.linux2.6.x86_64.rpm: 头V3 DSA/SHA1 Signature, 密钥 ID 5072e1f5: NOKEY 原因：这是由于yum安装了旧版本的GPG keys造成的，解决办法：
+  >
+  > + 后面加上  --force --nodeps 如：  rpm -ivh MySQL-server-5.5.46-1.linux2.6.x86_64.rpm --force --nodeps 从 RPM 版本 4.1 开始，在安装或升级软件包时会检查软件包的签名
+  > + 引用 
+  >   rpm --import /etc/pki/rpm-gpg/RPM* 
 
 + 初始化数据库，目录授权，并启动
 
@@ -114,7 +128,7 @@ yum remove mysql-community-common-5.7.20-1.el7.x86_64
 yum remove mysql-community-client-5.7.20-1.el7.x86_64
 yum remove mysql57-community-release-el7-11.noarch #rpm源可以不用删，留着让yum再次下载
 yum remove mysql-community-libs-5.7.20-1.el7.x86_64
-yum removemysql-community-server-5.7.20-1.el7.x86_64
+yum remove mysql-community-server-5.7.20-1.el7.x86_64
 ```
 
 #### 3、查看是否卸载完成

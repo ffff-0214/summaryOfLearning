@@ -16,7 +16,7 @@ tar -zxvf redis-5.0.5.tar.gz
 解压到指定目录：一般在 /usr/local中是用户级软件，所以要解压到那里去
 
 ```shell
-# tar zxvf /bbs.tar.zip -C /zzz/bbs 
+# tar -zxvf /bbs.tar.zip -C /zzz/bbs 
 ```
 
 + 把根目录下的bbs.tar.zip解压到/zzz/bbs下，前提要保证存在/zzz/bbs这个目录 
